@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Card:Equatable, CustomStringConvertible {
+struct Card: Equatable, CustomStringConvertible {
     var description: String {return "\(level)-\(color)-\(fill)-\(figure)"}
 
     enum Model: Int, CustomStringConvertible{
@@ -42,7 +42,7 @@ struct Card:Equatable, CustomStringConvertible {
 
     //static func == (frst: Card, scnd: Card) -> Bool {return IsEqual(frst: Card, scnd: Card)}
 
-    /*
+
     static func IsSet(cards:[Card]) -> Bool {
         guard cards.count == 3 else {return false}
         let summ = [
@@ -52,24 +52,9 @@ struct Card:Equatable, CustomStringConvertible {
             cards.reduce(0,{$1.figure.rawValue}),
         ]
         return summ.reduce(true, {$0 && ($1 % 3 == 0)})
-
-
-     static func IsSet(cards:[Card]) -> Bool {
-     var isSet : Bool = false
-     if cards.count != 3 { isSet = false }
-     let summ = [
-     cards.reduce(0,{$1.color.rawValue}),
-     cards.reduce(0,{$1.level.rawValue}),
-     cards.reduce(0,{$1.fill.rawValue}),
-     cards.reduce(0,{$1.figure.rawValue}),
-     ]
-
-     if summ.reduce(true, {$0 && ($1 % 3 == 0)}) {isSet = true}
-     return isSet
-     }
     }
-    */
-    static func IsSet(cards:[Card]) -> Bool {
+
+    /*static func IsSet(cards:[Card]) -> Bool {
         var isSet : Bool = false
         if cards.count == 3 {
 
@@ -90,5 +75,5 @@ struct Card:Equatable, CustomStringConvertible {
             if summ == 3 {isSet = true}
         }
         return isSet
-    }
+    }*/
 }
